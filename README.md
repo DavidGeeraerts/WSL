@@ -1,7 +1,6 @@
 # [Windows Subsystem for Linux Version 2](https://docs.microsoft.com/en-us/windows/wsl/)
 
-Use the installation guide to install and setup WSL
-(https://github.com/cal-sc/WSL/blob/main/WSL2-Setup-Guide.md)
+Use the [WSL2-Setup-Guide.md](https://github.com/cal-sc/WSL/blob/main/WSL2-Setup-Guide.md) installation guide to install and setup WSL
 
 Use instllation script for automated installation:
 
