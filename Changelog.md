@@ -19,8 +19,19 @@
 
 ---
 
+## Version 1.1.0 Build: 2021-03-23
+#### Added
+- Check for WSL Kernel Update already run
+- SHA256 file
+
+#### Changed
+- Banner uses full name
+- Hypervisor check defaults to Yes and timesout after 60 sec with default.
+- WSL Kernel Update package defaults to CURL and timesout after 60 sec with default. 
+- Color code when completed.
+
+---
+
 ## Version 1.0.0 Build: 2021-03-19
 
 - First relase
-
----

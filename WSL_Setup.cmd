@@ -36,8 +36,8 @@
 @Echo Off
 @SETLOCAL enableextensions
 SET $PROGRAM_NAME=WSL_Setup
-SET $Version=1.0.0
-SET $BUILD=2021-03-19 10:00
+SET $Version=1.1.0
+SET $BUILD=2021-03-23 10:00
 Title %$PROGRAM_NAME%
 Prompt WSL$G
 color 8F
@@ -106,7 +106,7 @@ Goto start
 :: CONSOLE MENU ::
 cls
 	echo  ********************************************************************
-	echo		%$PROGRAM_NAME%
+	echo		Windows Subsystem for Linux [WSL]
 	echo			Version: %$Version%
 	IF %$DEGUB_MODE% EQU 1 echo			Build: %$BUILD%
 	echo.
@@ -203,7 +203,7 @@ IF %$VT_CHECK% EQU 1 GoTo skipVT
 	IF %$HYPERVISOR% EQU 0 GoTo skipHypervisor
 	echo A non-hyper-V hypervisor has been detected!
 	echo Do you want to proceed anyway?
-	Choice /c YN /m "[Y]es or [N]o":
+	Choice /C YN /T 60 /D Y /m "[Y]es or [N]o":
 	IF %ERRORLEVEL% EQU 2 GoTo errHyper
 	IF %ERRORLEVEL% EQU 1 GoTo skipVT	
 	
@@ -279,10 +279,19 @@ CALL :HUD
 echo.
 cd %PUBLIC%\Downloads
 IF EXIST "%$LOGPATH%\wsl_update_x64.log" SET $STATUS_WSL_KERNEL_UPDATE=Check
+FIND /I "Installation completed successfully." "%APPDATA%\WSL\wsl_update_x64.log" 2> nul
+SET $WSL_KERNEL_UPDATE_STATUS=%ERRORLEVEL%
+IF %$WSL_KERNEL_UPDATE_STATUS% EQU 0 (
+	SET $STATUS_WSL_KERNEL_UPDATE=Done
+	GoTo skipWSLKU
+	)
 IF EXIST "%PUBLIC%\Downloads\wsl_update_x64.msi" GoTo skipWSLKU
 :: wmic product GET name /VALUE | FIND /I "Name=Windows Subsystem for Linux Update"
+wget -V 1> nul 2>nul
+SET $WGET_STATUS=%ERRORLEVEL%
+IF %$WGET_STATUS% EQU 0 GoTo subWGET
 echo Use WGET or CURL to download WSL Kernel Update?
-Choice /c WC /m "[W]GET or [C]URL":
+Choice /C WC /T 60 /D C /m "[W]GET or [C]URL":
 	IF %ERRORLEVEL% EQU 2 GoTo subCURL
 	IF %ERRORLEVEL% EQU 1 GoTo subWGET
 	
@@ -338,7 +347,10 @@ IF EXIST "%$LOGPATH%\WSL-Setup_Complete.txt" IF %$DEGUB_MODE% EQU 0 RD /S /Q "%$
 CALL :banner
 CALL :HUD
 echo.
-IF EXIST "%$LOGPATH%\WSL-Setup_Complete.txt" echo WSL Setup Completed!
+IF EXIST "%$LOGPATH%\WSL-Setup_Complete.txt" (
+	color 0A
+	echo WSL Setup Completed!
+	)
 IF NOT EXIST "%$LOGPATH%\WSL-Setup_Complete.txt" echo WSL Setup is not complete!
 echo.
 timeout /t 60
