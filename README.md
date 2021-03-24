@@ -11,11 +11,11 @@ Be sure to run the program as an administrator:
 
 - Select "Run as administrator"
 
-![Run-As-Administrator](./images/Run-As-Administrator.png)
+![Run-As-Administrator](./Images/Run-As-Administrator.png)
 
 If you run the automated setup, the computer must reboot, and you must run WSL_Setup.cmd a second time to complete the installation.
 
 
 ## Images
 
-![Completed](./images/WSL_Setup_Completed.png)
+![Completed](./Images/WSL_Setup_Completed.png)
