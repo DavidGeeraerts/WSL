@@ -20,3 +20,7 @@ If you run the automated setup, the computer must reboot, and you must run WSL_S
 ## Images
 
 ![Completed](./Images/WSL_Setup_Completed.png)
+
+![WSL_D_F_MM](./Images/WSL_Distro_Fetcher_Main_Menu.png)
+
+![Admin error](./Images/WSL_Distro_Fetcher_Admin_Err.png)
