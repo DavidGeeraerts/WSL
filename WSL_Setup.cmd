@@ -36,8 +36,8 @@
 @Echo Off
 @SETLOCAL enableextensions
 SET $PROGRAM_NAME=WSL_Setup
-SET $Version=1.1.0
-SET $BUILD=2021-03-23 10:00
+SET $Version=1.2.0
+SET $BUILD=2021-03-26 15:00
 Title %$PROGRAM_NAME%
 Prompt WSL$G
 color 8F
@@ -142,6 +142,9 @@ GoTo:EOF
 	echo.
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+echo CHECKING DEPENDENCIES...
+echo.
+
 :::: Admin Privelage Check ::::::::::::::::::::::::::::::::::::::::::::::::::::
 :admin
 	echo Checking if running with Administrative privelage...
@@ -223,20 +226,6 @@ IF %$VT_CHECK% EQU 1 GoTo skipVT
 :skipVT
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-CALL :banner
-CALL :HUD
-IF DEFINED ChocolateyInstall GoTo skipChoco
-echo Install Chocolatey, Windows package manager?
-echo (Linux distro's can be installed via Chocolatey!)
-echo.
-Choice /c YN /m "[Y]es or [N]o":
-	IF %ERRORLEVEL% EQU 2 GoTo skipChoco
-	IF %ERRORLEVEL% EQU 1 GoTo Choco_I
-
-:Choco_I
-CALL Install_Chocolatey.cmd
-:skipChoco
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 CALL :banner
 CALL :HUD
@@ -290,10 +279,12 @@ IF EXIST "%PUBLIC%\Downloads\wsl_update_x64.msi" GoTo skipWSLKU
 wget -V 1> nul 2>nul
 SET $WGET_STATUS=%ERRORLEVEL%
 IF %$WGET_STATUS% EQU 0 GoTo subWGET
-echo Use WGET or CURL to download WSL Kernel Update?
-Choice /C WC /T 60 /D C /m "[W]GET or [C]URL":
-	IF %ERRORLEVEL% EQU 2 GoTo subCURL
-	IF %ERRORLEVEL% EQU 1 GoTo subWGET
+IF %$WGET_STATUS% NEQ 0 GoTo subCURL
+:: Old code
+::	echo Use WGET or CURL to download WSL Kernel Update?
+:: Choice /C WC /T 60 /D C /m "[W]GET or [C]URL":
+::	IF %ERRORLEVEL% EQU 2 GoTo subCURL
+::	IF %ERRORLEVEL% EQU 1 GoTo subWGET
 	
 :subCURL
 echo.

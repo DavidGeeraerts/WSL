@@ -13,6 +13,7 @@ Be sure to run the program as an administrator:
 
 ![Run-As-Administrator](./Images/Run-As-Administrator.png)
 
+The installation is a 2 part process.
 If you run the automated setup, the computer must reboot, and you must run WSL_Setup.cmd a second time to complete the installation.
 
 

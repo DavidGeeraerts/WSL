@@ -19,6 +19,19 @@
 
 ---
 
+#WSL_Setup
+## Version 1.2.0 Build: 2021-03-26
+#### Removed
+- Chocolatey install. Now handled with WSL Distro Fetcher.
+
+
+#WSL_DISTRO_FETCHER
+## Version 0.1.0 Build: 2021-03-26
+#### Removed
+- Chocolatey install. Now handled with WSL Distro Fetcher.
+
+---
+
 ## Version 1.1.0 Build: 2021-03-23
 #### Added
 - Check for WSL Kernel Update already run
@@ -30,7 +43,6 @@
 - WSL Kernel Update package defaults to CURL and timesout after 60 sec with default. 
 - Color code when completed.
 
----
 
 ## Version 1.0.0 Build: 2021-03-19
 
