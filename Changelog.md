@@ -20,6 +20,25 @@
 ---
 
 #WSL_Setup
+## Version 1.3.0 Build: 2021-03-31
+#### Added
+- install log
+- GNU logo
+- VT Console message
+- WGET bin in tools
+
+#### Changed
+- How check for complete handled
+- VT check status "Done" to "Check"
+- How WSL kernel package handled
+
+#### Removed
+- WGET error condition
+
+---
+
+
+#WSL_Setup
 ## Version 1.2.0 Build: 2021-03-26
 #### Removed
 - Chocolatey install. Now handled with WSL Distro Fetcher.
@@ -30,7 +49,6 @@
 #### Removed
 - Chocolatey install. Now handled with WSL Distro Fetcher.
 
----
 
 ## Version 1.1.0 Build: 2021-03-23
 #### Added
