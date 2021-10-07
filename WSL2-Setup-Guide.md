@@ -1,5 +1,14 @@
 # [Windows Subsystem for Linux Version 2](https://docs.microsoft.com/en-us/windows/wsl/)
 
+[Install WSL with a single command now available in Windows 10 version 2004 and higher](https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/)
+
+With Windows 10 "2004" [20H1] (Build: 19041), it's no longer necessary to manually install WSL.
+To install, simply execute in shell:
+
+`wsl.exe --install`
+
+
+## Manual Installation for WSL2
 
 1. Add the following Windows features:
 	- Windows Subsystem for Linux (WSL required)

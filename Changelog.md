@@ -19,7 +19,14 @@
 
 ---
 
-#WSL_Setup
+# WSL_Setup
+
+## Version 1.3.1 Build: 2021-10-07
+#### Added
+- Windows 10 "2004" auto-install wsl in set-Guide
+
+---
+
 ## Version 1.3.0 Build: 2021-03-31
 #### Added
 - install log
@@ -34,8 +41,6 @@
 
 #### Removed
 - WGET error condition
-
----
 
 
 #WSL_Setup
