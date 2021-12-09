@@ -19,15 +19,21 @@
 
 ---
 
+## Version 1.5.0 Build: 2021-12-09
+#### Changed
+- WSL User guide
+- Readme
+
+---
+
+
 ## Version 1.4.0 Build: 2021-12-08
 #### Added
 - WSL User guide
 - .gitignore
 
----
 
 
-# WSL_Setup
 
 ## Version 1.3.1 Build: 2021-10-07
 #### Added

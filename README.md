@@ -1,10 +1,18 @@
 # [Windows Subsystem for Linux Version 2](https://docs.microsoft.com/en-us/windows/wsl/)
 
-Use the [WSL2-Setup-Guide.md](https://github.com/cal-sc/WSL/blob/main/WSL2-Setup-Guide.md) installation guide to install and setup WSL
+To install WSL on Windows:
+`wsl.exe --install`
 
-Use instllation script for automated installation:
+_Version must be Windows 10 2004 20H1 build 19041 or later_
 
-[WSL_Setup.cmd](https://github.com/cal-sc/WSL/archive/refs/tags/v1.0.0.zip)
+Use the [WSL2-Setup-Guide.md](WSL2-Setup-Guide.md) for manually installing and setup of WSL for older versions of Window 10 -- less than 2004 20H1 Build 19041.
+
+
+Reference the [User Guide](WSL_User_Guide.md) for common tasks.
+
+Use installation script for automated installation:
+
+[WSL_Setup.cmd](WSL_Setup.cmd)
 
 Be sure to run the program as an administrator:
 - Right-click the program
